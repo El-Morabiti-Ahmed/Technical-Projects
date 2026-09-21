@@ -1,0 +1,21 @@
+.card{
+    border: 2px red solid;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-right: 24px;
+    padding: 3px;
+}
+.parent{
+    display: flex;
+    border: 2px black solid;
+    padding: 4px;
+    width: fit-content;
+}
+.t{
+    font-weight: bold;
+}
+.v{
+    font-size: 24px;
+}
