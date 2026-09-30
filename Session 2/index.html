@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports Games Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen p-6">
+
+    <header class="max-w-6xl mx-auto mb-8 text-center border-b border-slate-800 pb-6">
+        <h1 class="text-4xl font-black text-indigo-400 tracking-tight">ESPORTS PORTAL</h1>
+        <p class="text-slate-400 mt-2">Manage Platforms and Games</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- 1. PLATFORMS (CLASSIFICATION) -->
+        <section class="bg-slate-800 p-6 rounded-xl border border-slate-700/50 shadow-xl flex flex-col">
+            <h2 class="text-2xl font-bold text-emerald-400 mb-4">1. Platforms</h2>
+            
+            <form id="form-platform" class="space-y-3 mb-6 bg-slate-900/50 p-4 rounded-lg">
+                <input type="text" id="platform-name" placeholder="Platform (e.g., PC, PS5)" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-emerald-500">
+                <input type="text" id="platform-vendor" placeholder="Vendor (e.g., Sony, Valve)" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-emerald-500">
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 rounded text-sm transition">
+                    Add Platform
+                </button>
+            </form>
+
+            <div class="overflow-x-auto flex-1">
+                <table class="w-full text-left text-sm">
+                    <thead class="text-xs uppercase bg-slate-700 text-slate-300">
+                        <tr>
+                            <th class="p-2">ID</th>
+                            <th class="p-2">Name</th>
+                            <th class="p-2">Vendor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-platforms" class="divide-y divide-slate-700 text-slate-300"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2. GAMES (MAIN CLASS / ENTITY) -->
+        <section class="bg-slate-800 p-6 rounded-xl border border-slate-700/50 shadow-xl flex flex-col">
+            <h2 class="text-2xl font-bold text-indigo-400 mb-4">2. Games</h2>
+            
+            <form id="form-game" class="space-y-3 mb-6 bg-slate-900/50 p-4 rounded-lg">
+                <input type="text" id="game-title" placeholder="Game Title (e.g., VALORANT)" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                
+                <input type="text" id="game-genre" placeholder="Genre (e.g., Tactical Shooter)" required
+                    class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-indigo-500">
+
+                <select id="select-platform" required class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                    <option value="">Select Platform...</option>
+                </select>
+
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded text-sm transition">
+                    Add Game
+                </button>
+            </form>
+
+            <div class="overflow-x-auto flex-1">
+                <table class="w-full text-left text-sm">
+                    <thead class="text-xs uppercase bg-slate-700 text-slate-300">
+                        <tr>
+                            <th class="p-2">Title</th>
+                            <th class="p-2">Genre</th>
+                            <th class="p-2">Platform</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-games" class="divide-y divide-slate-700 text-slate-300"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
