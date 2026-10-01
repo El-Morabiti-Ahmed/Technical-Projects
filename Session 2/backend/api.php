@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-require_once __DIR__ . '/Storage.php';
+require_once __DIR__ . '/storage.php';
 
 class ApiHandler {
     private array $storage;

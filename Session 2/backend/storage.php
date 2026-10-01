@@ -4,7 +4,7 @@ class StorageManager {
     private string $filePath;
 
     public function __construct(string $filename) {
-        $dir = __DIR__ . '/../data';
+        $dir = __DIR__ . '/data';
         if (!is_dir($dir)) {
             mkdir($dir, 0777, true);
         }

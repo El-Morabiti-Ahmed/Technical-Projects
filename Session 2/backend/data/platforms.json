@@ -1,0 +1,12 @@
+[
+    {
+        "name": "PS5",
+        "vendor": "Sony",
+        "id": 1
+    },
+    {
+        "name": "PC",
+        "vendor": "ASUS",
+        "id": 2
+    }
+]
