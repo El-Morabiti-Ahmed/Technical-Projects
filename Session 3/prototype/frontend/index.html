@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Spartel Blog</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Primary color configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f6ff',
+                            500: '#2673e8',
+                            600: '#1c5bba',
+                            900: '#0a2042'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-gray-900 text-white flex-col hidden md:flex shrink-0">
+        <div class="p-6 border-b border-gray-800">
+            <h2 class="text-xl font-bold">Admin Games</h2>
+            <p class="text-xs text-primary-500 mt-1 uppercase font-semibold tracking-wider">
+                Sprint 1
+            </p>
+        </div>
+
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="#"
+                class="block px-4 py-2 rounded text-gray-400 hover:bg-gray-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 transition-colors">
+                Dashboard
+            </a>
+
+            <a href="#"
+                aria-current="page"
+                class="block px-4 py-2 rounded bg-primary-600 text-white font-medium hover:bg-primary-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors">
+                Games
+            </a>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col min-w-0 min-h-screen">
+
+        <!-- HEADER -->
+        <header class="bg-white min-h-16 border-b border-gray-200 flex items-center justify-between px-4 sm:px-6">
+            <div class="font-medium text-gray-600 text-sm sm:text-base">
+                Games Management
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-semibold">Admin</span>
+            </div>
+        </header>
+
+        <!-- WORKSPACE -->
+        <main class="flex-1 overflow-y-auto p-4 sm:p-6 bg-gray-50">
+            <div class="max-w-5xl mx-auto space-y-8">
+
+                <!-- SECTION 1: PAGE HEADER -->
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Games</h1>
+                        <p class="text-sm text-gray-500">Organize your blog's games.</p>
+                    </div>
+
+                    <button
+                        id="btn-show-form"
+                        type="button"
+                        class="w-full sm:w-auto bg-primary-600 text-white px-4 py-2 rounded shadow
+                        hover:bg-primary-500 active:bg-primary-900
+                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
+                        disabled:opacity-50 disabled:cursor-not-allowed
+                        transition-colors">
+                        + New Game
+                    </button>
+                </div>
+
+                <!-- SECTION 2: ADD GAME FORM -->
+                <div
+                    id="section-form"
+                    class="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200"
+                    hidden>
+
+                    <h2 class="text-lg font-bold mb-4">Add a Game</h2>
+
+                    <form id="form" class="space-y-4">
+                        <input type="hidden" id="game-id" value="">
+
+                        <div>
+                            <label for="game-name" class="block text-sm font-semibold text-gray-700 mb-1">
+                                Game Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="game-name"
+                                required
+                                maxlength="100"
+                                placeholder="Ex: Elden Ring"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg
+                                hover:border-gray-400
+                                focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+                                transition-colors">
+                        </div>
+
+                        <div>
+                            <label for="game-platform" class="block text-sm font-semibold text-gray-700 mb-1">
+                                Platform
+                            </label>
+
+                            <select
+                                id="game-platform"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white
+                                hover:border-gray-400
+                                focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+                                transition-colors">
+
+                                <option value="">-- Choose a platform --</option>
+                                <option value="PC">PC</option>
+                                <option value="PlayStation">PlayStation</option>
+                                <option value="Xbox">Xbox</option>
+                                <option value="Nintendo Switch">Nintendo Switch</option>
+                                <option value="Mobile">Mobile</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col-reverse sm:flex-row justify-end gap-2 mt-4">
+                            <button
+                                type="button"
+                                id="btn-cancel-form"
+                                class="w-full sm:w-auto px-4 py-2 text-gray-600 border border-gray-300 rounded
+                                hover:bg-gray-100 hover:text-gray-900
+                                active:bg-gray-200
+                                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400
+                                transition-colors">
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                id="btn-save"
+                                class="w-full sm:w-auto px-4 py-2 bg-primary-600 text-white rounded
+                                hover:bg-primary-500 active:bg-primary-900
+                                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
+                                disabled:opacity-50 disabled:cursor-not-allowed
+                                transition-colors">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SECTION 3: GAMES LIST -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[600px] text-left border-collapse">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-sm font-semibold text-gray-500 uppercase">ID</th>
+                                    <th class="p-4 text-sm font-semibold text-gray-500 uppercase">Name</th>
+                                    <th class="p-4 text-sm font-semibold text-gray-500 uppercase">Platform</th>
+                                    <th class="p-4 text-sm font-semibold text-gray-500 uppercase text-right">Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="table-games-body" class="divide-y divide-gray-100">
+                                <!-- Data will be injected here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div
+        id="toast"
+        role="status"
+        aria-live="polite"
+        class="hidden fixed bottom-5 right-5 left-5 sm:left-auto sm:max-w-sm z-50
+        px-5 py-3 text-white rounded-lg shadow-lg
+        opacity-0 translate-y-2 transition-all duration-300">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

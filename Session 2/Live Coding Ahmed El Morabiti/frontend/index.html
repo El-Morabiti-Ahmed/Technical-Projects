@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Creation Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <h1>Game Creation form</h1>
+    <button id="formSHOWbtn">+ Create New Game</button>
+
+    <form action="" id="form" hidden class="flex">
+        <input type="text" placeholder="Game Name" id="nameINPUT"><br>
+        <input type="text" placeholder="Game Platform" id="platINPUT"><br>
+        <button type="submit" id="createBTN">Create Game</button><br>
+        <button type="button" id="cancelBTN">Cancel</button>
+    </form>
+
+    
+    <table class="border-1">
+        <tbody id="tbody">
+            <tr>
+                <th class="border-1 px-5 py-4">Game Name</th>
+                <th class="border-1 px-5 py-4">Platform</th>
+            </tr>
+        </tbody>
+    </table>
+    
+
+
+    <script src="main.js"></script>
+</body>
+</html>

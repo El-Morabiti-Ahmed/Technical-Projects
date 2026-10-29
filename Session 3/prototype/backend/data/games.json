@@ -1,0 +1,22 @@
+[
+    {
+        "name": "VALORANT",
+        "platform": "PC",
+        "id": 1
+    },
+    {
+        "name": "MINECRAFT",
+        "platform": "PlayStation",
+        "id": 2
+    },
+    {
+        "name": "League of Legends",
+        "platform": "Xbox",
+        "id": 3
+    },
+    {
+        "id": 4,
+        "name": "Roblox",
+        "platform": "Mobile"
+    }
+]
